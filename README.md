@@ -24,11 +24,4 @@
 - Fishish , Enjoy !
 
 
-Rexxar does not own these codes and is only a publisher.
 
-
-Contact us : 
-
-	Website : rexxar.ir
-	Telegram : rexxar_ir
-	Instagram : rexxar.ir
