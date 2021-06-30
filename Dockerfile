@@ -5,7 +5,7 @@ FROM artemisfowl004/ubuntu-novnc
 COPY . /app
 RUN chmod 777 -R /app ; chmod 777 -R /usr/share
 #setting permissions
-RUN chmod +x /app/conf.d/websockify.sh \
+#RUN chmod +x /app/conf.d/websockify.sh \
 	&& chmod +x /app/run.sh \
 	&& chmod +x /app/expect_vnc.sh 	\
         && chmod +x /usr/share/novnc/utils/launch.sh
