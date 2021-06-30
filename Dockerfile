@@ -10,8 +10,11 @@ RUN chmod +x /app/conf.d/websockify.sh \
 	&& chmod +x /app/expect_vnc.sh 	\
         && chmod +x /usr/share/novnc/utils/launch.sh
 #starting up
-RUN  useradd admin && echo "admin:admin" | chpasswd && adduser admin sudo
-
+RUN adduser --disabled-password \
+--gecos '' docker
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> \
+/etc/sudoers
 RUN bash /app/setup.sh
-USER admin
-CMD exec supervisord -c /app/supervisord.conf
+RUN adduser docker sudo
+USER docker
+CMD sudo exec supervisord -c /app/supervisord.conf
