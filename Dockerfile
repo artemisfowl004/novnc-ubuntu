@@ -13,6 +13,6 @@ RUN chmod +x /app/conf.d/websockify.sh \
 RUN  useradd admin && echo "admin:admin" | chpasswd && adduser admin sudo
 
 RUN bash /app/setup.sh
-USER newuser
+USER admin
 RUN echo "fowl:fowl" | chpasswd
 CMD exec supervisord -c /app/supervisord.conf
