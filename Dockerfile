@@ -14,5 +14,4 @@ RUN  useradd admin && echo "admin:admin" | chpasswd && adduser admin sudo
 
 RUN bash /app/setup.sh
 USER admin
-RUN echo "fowl:fowl" | chpasswd
 CMD exec supervisord -c /app/supervisord.conf
