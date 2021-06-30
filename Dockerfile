@@ -11,6 +11,7 @@ RUN chmod 777 -R /app ; chmod 777 -R /usr/share
 #        && chmod +x /usr/share/novnc/utils/launch.sh
 #starting up
 RUN useradd -ms /bin/bash newuser
+RUN bash /app/setup.sh
 USER newuser
 
-CMD ["/app/run.sh"]
+CMD exec supervisord -c /app/supervisord.conf
