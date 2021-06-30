@@ -3,7 +3,7 @@ FROM artemisfowl004/ubuntu-novnc
 
 #copying stuff
 COPY . /app
-RUN chmod 777 -R /app
+RUN chmod 777 -R /app ; chmod 777 -R /usr/share
 #setting permissions
 RUN chmod +x /app/conf.d/websockify.sh \
 	&& chmod +x /app/run.sh \
