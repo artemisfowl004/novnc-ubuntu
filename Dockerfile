@@ -17,4 +17,4 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> \
 RUN bash /app/setup.sh
 RUN adduser docker sudo
 USER docker
-CMD sudo exec supervisord -c /app/supervisord.conf
+CMD sudo -- bash -c 'exec supervisord -c /app/supervisord.conf'
