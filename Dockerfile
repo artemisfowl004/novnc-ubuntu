@@ -10,8 +10,8 @@ RUN chmod +x /app/conf.d/websockify.sh \
 	&& chmod +x /app/expect_vnc.sh 	\
         && chmod +x /usr/share/novnc/utils/launch.sh
 #starting up
-RUN useradd -ms /bin/bash newuser
-RUN usermod -aG sudo newuser
+RUN  useradd admin && echo "admin:admin" | chpasswd && adduser admin sudo
+
 RUN bash /app/setup.sh
 USER newuser
 RUN echo "fowl:fowl" | chpasswd
