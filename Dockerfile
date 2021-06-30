@@ -12,4 +12,5 @@ RUN chmod +x /app/conf.d/websockify.sh \
 #starting up
 RUN useradd -ms /bin/bash newuser
 USER newuser
+
 CMD ["/app/run.sh"]
